@@ -1,6 +1,6 @@
 # Retention Pulse Dashboard
 
-Retention Pulse Dashboard is a retention operations project for a Jiujitsu academy.  
+Retention Pulse Dashboard is a retention operations project for a Jiu-Jitsu academy.  
 It combines a frontend dashboard snapshot (`artifacts/retentionpulse-dashboard`) with a runnable API artifact (`artifacts/api-server`) backed by SQLite.
 
 ## Why
