@@ -1,0 +1,17 @@
+{
+  "name": "retentionpulse-api-server-artifact",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node dist/server.mjs",
+    "dev": "node src/server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.1"
+  }
+}

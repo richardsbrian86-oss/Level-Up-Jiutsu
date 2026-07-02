@@ -1,0 +1,13 @@
+/api/actions
+/api/attendance
+/api/classes
+/api/classes/
+/api/coaches
+/api/coaches/
+/api/copilot/ask
+/api/intake/
+/api/onboarding
+/api/onboarding/
+/api/public/schedule
+/api/risk/recalculate
+/api/students
