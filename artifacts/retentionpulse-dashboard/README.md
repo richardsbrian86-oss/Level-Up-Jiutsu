@@ -62,7 +62,7 @@ The solution is split into two parts:
 
 ## Run the API Artifact Locally
 
-From `/home/runner/work/Level-Up-Jiutsu/Level-Up-Jiutsu/artifacts/api-server`:
+From `artifacts/api-server`:
 
 1. `pnpm install`
 2. `pnpm build`
