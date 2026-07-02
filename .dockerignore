@@ -1,0 +1,17 @@
+.git
+.gitignore
+.local
+.agents
+.replit
+replit.nix
+*.md
+docs
+attached_assets
+node_modules
+**/node_modules
+.env*
+**/dist
+**/*.log
+**/coverage
+**/.turbo
+**/tsconfig.tsbuildinfo

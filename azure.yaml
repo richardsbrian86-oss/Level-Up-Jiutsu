@@ -1,0 +1,29 @@
+name: retentionpulse
+
+hooks:
+  postprovision:
+    shell: sh
+    run: scripts/migrate.sh
+    interactive: true
+    continueOnError: false
+
+services:
+  api:
+    project: ./artifacts/api-server
+    language: docker
+    docker:
+      path: ./artifacts/api-server/Dockerfile
+      context: .
+    host: containerapp
+
+  frontend:
+    project: ./artifacts/retentionpulse
+    language: docker
+    docker:
+      path: ./artifacts/retentionpulse/Dockerfile
+      context: .
+    host: containerapp
+
+infra:
+  provider: bicep
+  path: infra

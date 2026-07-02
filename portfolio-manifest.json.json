@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Billing Orchestrator",
+    "status": "Active",
+    "pulse": "Operational",
+    "updated": "2026-06-28",
+    "stack": ["Node.js", "Stripe API", "Retool", "n8n", "PostgreSQL"],
+    "workflow": "An AI agent monitors failed payments, drafts recovery actions, and routes exceptions into a human review queue.",
+    "docs": "https://replit.com/@richardsbrian86/Retention-Pulse-Dashboard"
+  },
+  {
+    "name": "Support Triage Copilot",
+    "status": "Active",
+    "pulse": "Under Development",
+    "updated": "2026-06-29",
+    "stack": ["Python", "OpenAI", "Slack", "Retool", "SQLite"],
+    "workflow": "Incoming support threads are summarized, classified, and prioritized by an agent before escalation.",
+    "docs": "https://replit.com/@richardsbrian86/Retention-Pulse-Dashboard"
+  },
+  {
+    "name": "Client Onboarding Grid",
+    "status": "Maintenance",
+    "pulse": "Requires Maintenance",
+    "updated": "2026-04-15",
+    "stack": ["Node.js", "Retool", "HubSpot", "SMTP", "Google Sheets"],
+    "workflow": "The agent coordinates onboarding checklists, confirms document receipt, and triggers welcome communications.",
+    "docs": "https://replit.com/@richardsbrian86/Retention-Pulse-Dashboard"
+  },
+  {
+    "name": "Founder Daily Brief",
+    "status": "Active",
+    "pulse": "Operational",
+    "updated": "2026-06-27",
+    "stack": ["Python", "Retool", "Notion", "Slack", "Anthropic"],
+    "workflow": "A planning agent consolidates project updates, surfaces blockers, and writes a daily executive brief.",
+    "docs": "https://replit.com/@richardsbrian86/Retention-Pulse-Dashboard"
+  }
+]

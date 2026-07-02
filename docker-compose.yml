@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: retentionpulse
+      POSTGRES_USER: retpulse
+      POSTGRES_PASSWORD: retpulse_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U retpulse -d retentionpulse"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: artifacts/api-server/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      PORT: "8080"
+      NODE_ENV: production
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: artifacts/retentionpulse/Dockerfile
+    restart: unless-stopped
+    environment:
+      PORT: "80"
+      API_INTERNAL_URL: "http://api:8080"
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
