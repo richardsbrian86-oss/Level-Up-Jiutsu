@@ -1,45 +1,29 @@
-# [Project name]
+# Retention Pulse Dashboard
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Retention Pulse is a portfolio prototype for martial arts academies. It includes an attendance and retention dashboard snapshot and a SQLite-backed API for student records, class bookings, and onboarding.
 
-## Run & Operate
+## Run the API
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+Requires Node.js 24 or later and pnpm. From the repository root:
 
-## Stack
+```sh
+pnpm install
+pnpm --dir artifacts/api-server dev
+```
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+The API listens on port 3000 by default. Set `PORT` to use a different port. Its SQLite database and demonstration seed data are created on first launch.
 
-## Where things live
+To build and start the API:
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+```sh
+pnpm --dir artifacts/api-server build
+pnpm --dir artifacts/api-server start
+```
 
-## Architecture decisions
+## Project layout
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- `artifacts/api-server/src/server.mjs` — Express routes.
+- `artifacts/api-server/src/db.mjs` — SQLite schema, seed data, and queries.
+- `artifacts/retentionpulse-dashboard/` — bundled dashboard snapshot; frontend source is not included.
 
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
-
-## User preferences
-
-_Populate as you build — explicit user instructions worth remembering across sessions._
-
-## Gotchas
-
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+The `/api/copilot/ask` route returns a basic retention summary; it does not use an AI service. The API is a prototype without authentication or authorization, so use demonstration data only.
