@@ -1,10 +1,10 @@
-# RetentionPulse Dashboard
+# Retention Pulse Dashboard
 
-RetentionPulse helps martial arts academies spot declining student engagement and organize timely follow-up. This directory contains a bundled dashboard snapshot; the runnable API backend lives separately in `artifacts/api-server`.
+Retention Pulse helps martial arts academies spot declining student engagement and organize timely follow-up. This directory contains a bundled dashboard snapshot; the runnable API backend lives separately in `artifacts/api-server`.
 
 ## Why
 
-When students attend less often, they can disengage before coaches notice. RetentionPulse brings attendance history, retention risk, follow-up actions, class schedules, and onboarding progress into one place so academy teams can respond earlier and keep students connected.
+When students attend less often, they can disengage before coaches notice. Retention Pulse brings attendance history, retention risk, follow-up actions, class schedules, and onboarding progress into one place so academy teams can respond earlier and keep students connected.
 
 ## How
 
